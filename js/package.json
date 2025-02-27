@@ -1,0 +1,15 @@
+{
+  "name": "js",
+  "packageManager": "yarn@3.6.3",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "serve": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "tsc": "^2.0.4"
+  }
+}
