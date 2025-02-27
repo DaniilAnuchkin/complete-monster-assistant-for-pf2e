@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.7.0",
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "js"
   ]
 }

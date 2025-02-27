@@ -2588,6 +2588,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js@workspace:js":
+  version: 0.0.0-use.local
+  resolution: "js@workspace:js"
+  dependencies:
+    "@types/node": ^22.13.4
+    ts-node: ^10.9.2
+    tsc: ^2.0.4
+    typescript: ^5.7.3
+  languageName: unknown
+  linkType: soft
+
 "jsbn@npm:1.1.0":
   version: 1.1.0
   resolution: "jsbn@npm:1.1.0"
@@ -3823,6 +3834,15 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: fde256c9073969e234526e2cfead42591b9a2aec5222bac154b0de2fa9e4ceb30efcd717ee8bc785a56f3a119bdd5aa27b333d9dbec94ed254bd26f8944c67ac
+  languageName: node
+  linkType: hard
+
+"tsc@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "tsc@npm:2.0.4"
+  bin:
+    tsc: bin/tsc
+  checksum: 50b10240887424c66454687f0fca4e319713b35cb44f0dab228719eb4dd757251f83c3d79e60d29dfbe90c2d6f1272f793b83e75a9fca2c622b4213ad3eb8cb1
   languageName: node
   linkType: hard
 
