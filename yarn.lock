@@ -1533,7 +1533,7 @@ __metadata:
     eslint-plugin-react-hooks: ^5.0.0
     eslint-plugin-react-refresh: ^0.4.18
     globals: ^15.14.0
-    jotai: ^2.12.0
+    mobx-react: ^9.2.0
     react: ^19.0.0
     react-dom: ^19.0.0
     tailwindcss: ^4.0.6
@@ -2570,21 +2570,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jotai@npm:^2.12.0":
-  version: 2.12.1
-  resolution: "jotai@npm:2.12.1"
-  peerDependencies:
-    "@types/react": ">=17.0.0"
-    react: ">=17.0.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    react:
-      optional: true
-  checksum: 30e019c2694b654cf4158d64a6d5372a6a24ff646d74b2000f816473ac5ab6f7e550b9180b9b33cd56544ab8b482aa0e589a770fcf1f8009b3500ce31d400fd5
-  languageName: node
-  linkType: hard
-
 "js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -3007,6 +2992,40 @@ __metadata:
   bin:
     mkdirp: dist/cjs/src/bin.js
   checksum: 972deb188e8fb55547f1e58d66bd6b4a3623bf0c7137802582602d73e6480c1c2268dcbafbfb1be466e00cc7e56ac514d7fd9334b7cf33e3e2ab547c16f83a8d
+  languageName: node
+  linkType: hard
+
+"mobx-react-lite@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "mobx-react-lite@npm:4.1.0"
+  dependencies:
+    use-sync-external-store: ^1.4.0
+  peerDependencies:
+    mobx: ^6.9.0
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: fa53b3044a235fe16445420030761081a4b3b9553b4f3eb4c4fa9f2c4d18326db6b2a46cb67d47bf7c009632578e66b7ded79ecf7cffb1bf8e7159c0b4e32da9
+  languageName: node
+  linkType: hard
+
+"mobx-react@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "mobx-react@npm:9.2.0"
+  dependencies:
+    mobx-react-lite: ^4.1.0
+  peerDependencies:
+    mobx: ^6.9.0
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: bdcb5f7ab05bd8e73bb498d0fc53225a2f4e2066a8d52a67c5df03b5930dfa59e96d1f1031cb77d69a421f93b8cc371ef33aba47a83b10cea44d95823a1da581
   languageName: node
   linkType: hard
 
@@ -3912,6 +3931,15 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "use-sync-external-store@npm:1.4.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: dc3843a1b59ac8bd01417bd79498d4c688d5df8bf4801be50008ef4bfaacb349058c0b1605b5b43c828e0a2d62722d7e861573b3f31cea77a7f23e8b0fc2f7e3
   languageName: node
   linkType: hard
 

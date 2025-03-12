@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  # Контейнер с Node.js
+  client:
+    build: ./client
+    container_name: frontend
+    ports: 
+      - '5173'
+    stdin_open: true
+    tty: true
+  # Контейнер с nginx
+  server:
+    build: ./server
+    container_name: backend
+    ports:
+      - '3000'
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - client
+      - server

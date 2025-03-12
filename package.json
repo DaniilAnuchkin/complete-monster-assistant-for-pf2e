@@ -1,6 +1,6 @@
 {
   "name": "complete-monster-assistant-for-pf2e",
-  "packageManager": "yarn@3.6.3",
+  "packageManager": "yarn@4.7.0",
   "workspaces": [
     "client",
     "server"
