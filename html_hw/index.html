@@ -1,0 +1,382 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="normalize.css" rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <img class="navbar__logo" src="./assets/logo.png" alt="LOGO" />
+    <ul>
+      <li class="navbar__item active">
+        <a href="/home">
+          <span class="material-icons">home</span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="navbar__item">
+        <a href="/explore">
+          <span class="material-icons">dashboard_2</span>
+          <span>Explore</span>
+        </a>
+      </li>
+      <li class="navbar__item">
+        <a href="/saved">
+          <span class="material-icons">bookmark</span>
+          <span>Saved</span>
+        </a>
+      </li>
+      <li class="navbar__item">
+        <a href="/subscription">
+          <span class="material-icons">article</span>
+          <span>Subscription</span>
+        </a>
+      </li>
+      <li class="navbar__item">
+        <a href="/messages">
+          <span class="material-icons">mail</span>
+          <span>Messages</span>
+          <div class="navbar__item-counter">2</div>
+        </a>
+      </li>
+      <li class="navbar__item">
+        <a href="/settings">
+          <span class="material-icons">settings</span>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li class="navbar__item logout_btn">
+        <a href="/logout">
+          <span class="material-icons">logout</span>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+    <hr class="navbar__hr" />
+    <section class="subscribe">
+      <span class="material-icons subscribe__close"> close </span>
+      <span class="material-icons subscribe__icon">
+        local_fire_department
+      </span>
+      <article class="subscribe__offer">
+        <p class="subscribe__main">
+          Subscribe to our new plan <a href="/payment">$25</a>
+        </p>
+        <p class="subscribe__description">
+          It is a limited time offer that will expire soon.
+        </p>
+      </article>
+      <a class="subscribe__btn" href="/payment">
+        Subscribe now
+        <span class="material-icons"> arrow_right_alt </span>
+      </a>
+    </section>
+  </nav>
+  <nav class="navbar-mobile">
+    <img class="navbar-mobile__logo" src="./assets/logo.png" alt="LOGO" />
+    <ul>
+      <li class="navbar-mobile__item">
+        <a href="/explore">
+          <span class="material-icons">dashboard_2</span>
+          <span>Explore</span>
+        </a>
+      </li>
+      <li class="navbar-mobile__item">
+        <a href="/saved">
+          <span class="material-icons">bookmark</span>
+          <span>Saved</span>
+        </a>
+      </li>
+      <li class="navbar-mobile__item">
+        <span class="material-icons">more_horiz</span>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section class="tool-row">
+      <div class="filter">
+        <div class="filter__city">
+          <span class="material-icons"> my_location </span>
+          <span>San Francisco, California</span>
+          <span class="material-icons"> unfold_more </span>
+        </div>
+        <div class="filter__type">
+          <span class="material-icons"> donut_small </span>
+          <span>Analysis</span>
+          <span class="material-icons"> unfold_more </span>
+        </div>
+        <div class="filter__date">
+          <span class="material-icons"> calendar_month </span>
+          <span>Monthly</span>
+          <span class="material-icons"> unfold_more </span>
+        </div>
+      </div>
+      <div class="control">
+        <div class="control__search">
+          <span class="material-icons"> search </span>
+          <label for="search">Поиск</label>
+          <input id="search" type="text" placeholder="Search for anything…"></input>
+        </div>
+        <button class="control__sort">
+          <span class="material-icons"> sort </span>
+        </button>
+        <img class="control__avatar" src="./assets/avatar.jpeg" alt="avatar">
+      </div>
+    </section>
+    <section class="channels">
+      <div class="channels__header">
+        <span>Explore Channels</span>
+        <div class="see-all-btn">
+          <span>See all</span>
+          <span class="material-icons"> chevron_right </span>
+        </div>
+      </div>
+      <ul class="channels__items">
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/fox_news.png" alt="fox_news">
+          </div>
+          <span class="channel__name">Fox News</span>
+        </li>
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/cw6.png" alt="cw6_news">
+          </div>
+          <span class="channel__name">CW6 News</span>
+        </li>
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/abc_news.png" alt="abc_news">
+          </div>
+
+          <span class="channel__name">ABC News</span>
+        </li>
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/al_jz.png" alt="al_jazeera">
+          </div>
+
+          <span class="channel__name">Al Jazeera</span>
+        </li>
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/bbc_news.png" alt="bbc_news">
+          </div>
+          <span class="channel__name">Bbc News</span>
+        </li>
+        <li class="channel">
+          <div class="channel__img-wrapper">
+            <img class="channel__img" src="./assets/cnn_news.png" alt="cnn_news">
+          </div>
+          <span class="channel__name">Cnn News</span>
+        </li>
+      </ul>
+    </section>
+    <section class="td-headlines">
+      <div class="td-headlines__header">
+        <span>Today’s Headlines</span>
+        <div class="see-all-btn">
+          <span>See all</span>
+          <span class="material-icons"> chevron_right </span>
+        </div>
+      </div>
+      <ul class="td-headlines__items">
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">Hate speech vs free speech</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">Ontario Liberal leadership</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">Victim of Scarborough</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">Mother who left her baby</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">Mother of Stefanie Rengel</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news">
+          <div class="news__img">IMG</div>
+          <div class="news__content">
+            <span class="news__header">World Cup: Popular items</span>
+            <div class="news__approval">
+              <div class="likes">
+                <span class="material-icons likes_icon"> thumb_up </span>
+                <span class="likes_count"> 10.8к </span>
+              </div>
+              <div class="dislikes">
+                <span class="material-icons dislikes_icon"> thumb_down </span>
+                <span class="dislikes_count"> 1.4к </span>
+              </div>
+            </div>
+            <div class="news__credentials">
+              <div class="news__tag">bbc news</div>
+              <time class="news__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="featured-news">
+      <div class="featured-news__header">
+        <span>Featured News</span>
+        <div class="see-all-btn">
+          <span>See all</span>
+          <span class="material-icons"> chevron_right </span>
+        </div>
+      </div>
+      <ul class="featured-news__items">
+        <li class="news-card">
+          <div class="news-card__img">IMG</div>
+          <div class="news-card__content">
+            <span class="news-card__header">Travellers to pay more than $2K, Trudeau says</span>
+            <div class="news-card__credentials">
+              <div class="news-card__tag">bbc news</div>
+              <time class="news-card__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news-card">
+          <div class="news-card__img">IMG</div>
+          <div class="news-card__content">
+            <span class="news-card__header">Travellers to pay more than $2K, Trudeau says</span>
+            <div class="news-card__credentials">
+              <div class="news-card__tag">bbc news</div>
+              <time class="news-card__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+        <li class="news-card">
+          <div class="news-card__img">IMG</div>
+          <div class="news-card__content">
+            <span class="news-card__header">Travellers to pay more than $2K, Trudeau says</span>
+            <div class="news-card__credentials">
+              <div class="news-card__tag">bbc news</div>
+              <time class="news-card__time" datetime="14:00:00">
+                <span class="material-icons"> schedule </span>
+                <span>2:00 PM</span>
+              </time>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
