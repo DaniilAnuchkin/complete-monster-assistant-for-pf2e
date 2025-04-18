@@ -1,0 +1,22 @@
+@use "../styles/functions" as *;
+
+.layout {
+  height: 100%;
+  &__content {
+    padding: toRem(22px) toRem(32px) toRem(52px) toRem(32px);
+  }
+
+  &__header {
+    background: linear-gradient(#e8e4fc, #dad4fa);
+    border-top: 1px solid #c7bdf8;
+    border-radius: toRem(12px) toRem(12px) 0 0;
+    box-shadow: 0 -4px 10px rgba(123, 91, 255, 0.1);
+    height: toRem(42px);
+    line-height: toRem(42px);
+    width: 100%;
+  }
+}
+
+.ant-back-top {
+  inset-inline-end: var(--ant-control-height-lg);
+}

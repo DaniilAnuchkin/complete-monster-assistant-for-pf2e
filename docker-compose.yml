@@ -1,24 +1,65 @@
-version: '3.8'
 services:
   # Контейнер с Node.js
   client:
     build: ./client
     container_name: frontend
     ports: 
-      - '5173'
+      - "5173"
     stdin_open: true
     tty: true
   # Контейнер с nginx
   server:
     build: ./server
     container_name: backend
+    depends_on:
+      - mongo
     ports:
-      - '3000'
+      - "3000"
+    volumes:
+      - ./server/images:/images
   nginx:
     build: ./nginx
     container_name: nginx
-    ports:
-      - "80:80"
     depends_on:
       - client
       - server
+    ports:
+      - "80:80"
+  
+  mongo:
+    container_name: mongo-pf
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    ports:
+      - "27017:27017"
+    networks: 
+      - mongo-compose-network
+    volumes:
+      - './data:/data/db'
+ 
+  mongo-express:
+    image: mongo-express
+    container_name: mongoex-remap
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo-pf
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ROOT_USER}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASSWORD}
+      - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=${MONGO_ROOT_USER}
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - ME_CONFIG_BASICAUTH_USERNAME=${MONGOEXPRESS_LOGIN}
+      - ME_CONFIG_BASICAUTH_PASSWORD=${MONGOEXPRESS_PASSWORD}
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
+    networks: 
+      - mongo-compose-network
+
+networks:
+  mongo-compose-network:
+    driver: bridge

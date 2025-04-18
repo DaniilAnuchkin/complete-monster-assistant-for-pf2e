@@ -1,0 +1,1 @@
+export { IMonster } from "./IMonster";
