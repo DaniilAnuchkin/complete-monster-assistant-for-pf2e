@@ -1,0 +1,22 @@
+@use "./variables.scss" as *;
+@use "./functions.scss" as *;
+
+html {
+  font-size: $fontSize;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.css-var-r0 {
+  --ant-font-size: #{toRem(16px)};
+
+  &.ant-select-css-var {
+    --ant-select-option-font-size: #{toRem(14px)};
+  }
+
+  &.ant-input-css-var {
+    --ant-input-input-font-size: #{toRem(16px)};
+  }
+}

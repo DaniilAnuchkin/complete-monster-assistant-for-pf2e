@@ -2,14 +2,18 @@
   "name": "server",
   "packageManager": "yarn@4.7.0",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "NODE_ENV=local ts-node src/index.ts",
     "build": "tsc",
-    "serve": "node dist/index.js"
+    "serve:dev": "NODE_ENV=development node dist/index.js"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.4",
     "ts-node": "^10.9.2",

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.scss";
+import { RouterProvider } from "react-router/dom";
+import { px2remTransformer, StyleProvider } from "@ant-design/cssinjs";
+import { ConfigProvider } from "antd";
+import route from "./routes/routes";
+
+const px2rem = px2remTransformer({
+  rootValue: 16,
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ConfigProvider
+        theme={{
+          cssVar: true,
+          token: {
+            colorPrimary: "#6c3db6",
+            colorInfo: "#6c3db6",
+            colorSuccess: "#3dd68c",
+            colorError: "#d64550",
+            colorWarning: "#eba91b",
+            colorTextBase: "#2c2c2c",
+            colorBgBase: "#f5f5f5",
+          },
+        }}
+        button={{ className: "pf-btn" }}
+      >
+        <StyleProvider transformers={[px2rem]}>
+          <RouterProvider router={route} />
+        </StyleProvider>
+      </ConfigProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,36 @@
+@use "../../styles/functions.scss" as *;
+
+.paginated-list {
+  height: 100%;
+  overflow: hidden;
+
+  .ant-card-body {
+    height: 100%;
+  }
+
+  .ant-float-btn {
+    position: absolute;
+    bottom: toRem(20px);
+    right: toRem(35px);
+  }
+
+  &__body {
+    overflow: auto;
+    height: calc(100% - var(--ant-card-header-height));
+  }
+
+  &__content {
+    gap: toRem(28px);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__search,
+  &__sort {
+    width: toRem(200px);
+  }
+}

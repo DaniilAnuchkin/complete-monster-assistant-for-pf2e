@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es6",
     "module": "commonjs",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@sharedTypes/*": ["../sharedTypes/*"] // Alias for shared types
+    }
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
