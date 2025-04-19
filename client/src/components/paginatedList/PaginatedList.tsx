@@ -1,5 +1,6 @@
-import { Card, Flex, FloatButton, Input, Select } from "antd";
+import { Card, Flex, FloatButton, Input, Pagination, Select } from "antd";
 import { type JSX, useEffect, useRef, useState } from "react";
+import debounce from "lodash/debounce";
 import "./paginatedList.scss";
 import {
   IPaginatedObj,
@@ -21,8 +22,8 @@ function PaginatedList<GData>({
     field: "name",
     order: ESortOrder.ASC,
   });
-  const [pagination] = useState<IPagination>({
-    page: 0,
+  const [pagination, setPagination] = useState<IPagination>({
+    page: 1,
   });
   const [search, setSearch] = useState<string>();
   const contentRef = useRef(null);
@@ -30,11 +31,20 @@ function PaginatedList<GData>({
   useEffect(() => {
     const params: IFetchAllReq = {
       ...sort,
-      ...pagination,
+      page: pagination.page - 1,
       search,
     };
     dataFetch(params).then((res) => setData(res));
   }, [dataFetch, sort, pagination, search]);
+
+  const onSearchChange = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+    setPagination({ ...pagination, page: 1 });
+    setSearch(e.target.value);
+  }, 500);
+
+  const onPageChange = (page: number) => {
+    setPagination({ ...pagination, page });
+  };
 
   return (
     <Card
@@ -54,14 +64,22 @@ function PaginatedList<GData>({
                 value: "level",
                 label: "По уровню",
               },
+              {
+                value: "createdAt",
+                label: "По дате",
+              },
             ]}
             onChange={(val) => setSort({ ...sort, field: val })}
           />
+          <Pagination
+            current={pagination.page}
+            total={data?.totalElements}
+            onChange={onPageChange}
+          />
           <Input
             className="paginated-list__search"
-            value={search}
             placeholder="Поиск"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={onSearchChange}
           />
         </div>
       }
