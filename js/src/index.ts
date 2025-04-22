@@ -1,6 +1,7 @@
 // import Graph from "./task2/Graph";
 
-import stringArrayProxy from "./advancedJS/task10/task10";
+// import stringArrayProxy from "./advancedJS/task10/task10";
+import floydWarshall from "./algorithm/floid";
 
 // import getPrimeNumber from "./advancedJS/task8/task8";
 
@@ -44,9 +45,21 @@ import stringArrayProxy from "./advancedJS/task10/task10";
 // console.log(primeNumberGenerator.next().value);
 // console.log(primeNumberGenerator.next().value);
 
-const t = stringArrayProxy([]);
+// const t = stringArrayProxy([]);
 
-t["Привет"] = "Привет";
-t["Пока"] = "Пока";
+// t["Привет"] = "Привет";
+// t["Пока"] = "Пока";
 
-console.log(t["Пока"]); // Привет()
+// console.log(t["Пока"]); // Привет()
+
+const INF = Infinity;
+
+const graph = [
+  [0, 3, INF, 5],
+  [2, 0, INF, 4],
+  [INF, 1, 0, INF],
+  [INF, INF, 2, 0],
+];
+
+const result = floydWarshall(graph);
+console.table(result);
